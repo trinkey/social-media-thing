@@ -6,16 +6,19 @@ document.querySelector("body").setAttribute("data-color", validColors.indexOf(lo
 
 if (typeof(logged_in) !== 'boolean' || logged_in) {
   x.innerHTML = icons.settings;
+
   if (typeof(home) !== 'undefined') {
     x.innerHTML += icons.home;
   }
+
+  x.innerHTML += `<div id="message-icon">${icons.message}</div><div id="notification-icon">${icons.notification}</div>`;
 }
 
 if (typeof(share) !== 'undefined') {
   x.innerHTML += `<span title="Share" onclick="window.navigator.clipboard.writeText('${escapeHTML(share)}'); showlog('Copied to clipboard!');">${icons.share}</span>`;
 }
 
-document.querySelector("body").append(x);
+document.body.append(x);
 
 if (typeof(profile) === "undefined") {
   if (localStorage.getItem("username") === null) {
@@ -38,3 +41,9 @@ if (typeof(profile) === "undefined") {
     }
   }
 }
+
+hasNotification = true;
+hasMessage = true;
+
+if (typeof(hasNotification) !== "undefined" && hasNotification) { dom("notification-icon").classList.add("unread-dot"); }
+if (typeof(hasMessage) !== "undefined" && hasMessage) { dom("message-icon").classList.add("unread-dot"); }

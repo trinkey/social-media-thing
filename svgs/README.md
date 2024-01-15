@@ -10,3 +10,5 @@ the following svgs are from fontawesome:
 * lock (`fa-regular fa-lock`)
 * share (`fa-solid fa-share`)
 * user (`fa-solid fa-user`)
+* notification (`fa-solid fa-bell`)
+* message (`fa-solid fa-envelope`)
