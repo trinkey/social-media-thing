@@ -5,7 +5,9 @@ const usernameRegex = /(@[a-zA-Z0-9_\-]+)/g;
 const usernameRegexFull = /^[a-z0-9_\-]+$/g;
 
 const validColors = [
-  "purple", "purple2", "pinkgreen", "bluered", "blueyellow", "pink", "blue", "green", "orange", "red"
+  "rosewater", "flamingo", "pink", "mauve",
+  "red", "maroon", "peach", "yellow", "green",
+  "teal", "sky", "sapphire", "blue", "lavender"
 ]
 
 // Placeholder
@@ -115,7 +117,7 @@ function linkifyText(inputText, postId, comment=false) {
   let doTheThing = (input) => (
     input.split(usernameRegex).map((i) => {
       return i.match(usernameRegex) || postId !== undefined ? (
-        i.match(usernameRegex) ? `<a href="/u/${i.replace("@", "").toLowerCase()}">` : `<a href="/${comment ? "c" : "p"}/${postId}" tabindex="-1" class="text no-underline">`
+        i.match(usernameRegex) ? `<a href="/u/${i.replace("@", "").toLowerCase()}">` : `<a href="/${comment ? "c" : "p"}/${postId}" class="text no-underline">`
       ) + `${escapeHTML(i)}</a>` : escapeHTML(i);
     }).join("")
   );
@@ -128,7 +130,7 @@ function linkifyText(inputText, postId, comment=false) {
 }
 
 function escapeHTML(str) {
-  return str.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll("\"", "&quot;")
+  return str.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll("\"", "&quot;");
 }
 
 const icons = {
