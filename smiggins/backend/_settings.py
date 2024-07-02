@@ -5,7 +5,7 @@
 # -- General Site Configuration --
 
 # Version displayed.
-VERSION: str = "0.10.0"
+VERSION: str = "0.10.1"
 
 # What to have the site name be.
 SITE_NAME: str = "Jerimiah Smiggins"
@@ -28,6 +28,10 @@ MAX_ADMIN_LOG_LINES: int = 1000
 # The default language for any new user. Choose from one of the files in the
 # lang/ folder, omitting the .json file extension.
 DEFAULT_LANGUAGE: str = "en-US"
+
+# The default theme for the website. Can be one of the following:
+# "dawn", "dusk", "dark", "midnight", "black"
+DEFAULT_THEME: str = "dark"
 
 # Whether or not to cache languages. If this is on, then more ram will be used
 # to store them, however in the long run it will take a bit less CPU usage and
@@ -124,6 +128,7 @@ ENABLE_POST_DELETION: bool = True
 ENABLE_HASHTAGS: bool = True
 ENABLE_CHANGELOG_PAGE: bool = True
 ENABLE_CONTACT_PAGE: bool = True
+ENABLE_CREDITS_PAGE: bool = True
 ENABLE_PINNED_POSTS: bool = True
 ENABLE_ACCOUNT_SWITCHER: bool = True
 

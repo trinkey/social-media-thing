@@ -96,7 +96,12 @@ function addQuote(postID, isComment) {
             .then((json) => {
             if (json.success) {
                 post.innerHTML = "";
-                refresh();
+                if (window.location.pathname.toLowerCase().includes("/home") ||
+                    window.location.pathname.toLowerCase().includes(`/u/${localStorage.getItem("username") || "LOL IT BROKE LOLLLLLLLLL SO FUNNY"}`)) {
+                    let x = document.createElement("div");
+                    x.innerHTML = getPostHTML(json.post);
+                    dom("posts").prepend(x);
+                }
             }
             else {
                 post.querySelector(".log").innerText = json.reason;
